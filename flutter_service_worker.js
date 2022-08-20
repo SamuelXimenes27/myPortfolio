@@ -3,6 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
+<<<<<<< HEAD
+  "favicon.png": "5dcef449791fa27946b3d35ad8803796",
+=======
   "README.md": "0195b28ed572bb90cd0eb2d280603a2e",
 ".git/HEAD": "cdc6e77564d392632d1d3162ecd18e1f",
 ".git/hooks/pre-commit.sample": "e4db8c12ee125a8a085907b757359ef0",
@@ -132,10 +135,23 @@ const RESOURCES = {
 ".git/logs/refs/remotes/origin/main": "4a2bd1a33b0666baf509adbd8cbd07b9",
 ".git/logs/refs/remotes/origin/develop": "e005a7cafde86c085f1a8610efff15fb",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
+>>>>>>> ea333232132930ff526052d7391b1ebd8444ae7b
 "icons/Icon-maskable-512.png": "301a7604d45b3e739efc881eb04896ea",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
+<<<<<<< HEAD
+"main.dart.js": "b17a0646e5fa9a9e2fb2e9fdeb6fb9a3",
+"version.json": "5a7b54e415d358e7ed98b39afc67182b",
+"assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
+"assets/AssetManifest.json": "8ea8b37cbb4bee6a501ab50278926b2e",
+"assets/NOTICES": "bc331528abea3f2efd55dab00f8bf619",
+"assets/assets/icons/android.png": "e3d4fd07afafd3ec1ec8e102df83ce45",
+"assets/assets/icons/mysql.png": "67c31ed1d400bc49c8500cdf7feeeffe",
+"assets/assets/icons/flutter.png": "6956a4a68696cf94d8db16530bc39686",
+"assets/assets/icons/api.png": "e3073de1de0fb3e9f37a03a669119ec4",
+=======
 "main.dart.js": "8dfef1abb0a4dfddf54f60e78f18af9e",
 "version.json": "5a7b54e415d358e7ed98b39afc67182b",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
@@ -163,6 +179,7 @@ const RESOURCES = {
 "assets/assets/icons/android.png": "e3d4fd07afafd3ec1ec8e102df83ce45",
 "assets/assets/icons/mysql.png": "67c31ed1d400bc49c8500cdf7feeeffe",
 "assets/assets/icons/flutter.png": "6956a4a68696cf94d8db16530bc39686",
+>>>>>>> ea333232132930ff526052d7391b1ebd8444ae7b
 "assets/assets/icons/css3.png": "39a3bea9f914b8daa84a5030ed7a7bda",
 "assets/assets/icons/linkedin.png": "0dfdf900b4949bfe7a038c3121e99376",
 "assets/assets/icons/kotlin.png": "d75a70756f81f9080f994372b76f9e86",
@@ -178,14 +195,25 @@ const RESOURCES = {
 "assets/assets/images/perfil-2.png": "e509efebbba31fcf8383a08ab0a4d183",
 "assets/assets/images/perfil.png": "6366a1f818b54f0d747d4fba25efb4b1",
 "assets/assets/images/me.jpeg": "14f36c9facb75fdfb846fc55448302b0",
+<<<<<<< HEAD
+"assets/assets/images/expenseApp.png": "2aa4b55724419ff3c76583b8784ef328",
+"assets/assets/images/webPortfolio.png": "4b3462535757d73d20eb3a38bda2f21f",
+"assets/assets/images/lapiscoApp.png": "c8b8481656d73e5a5e482da3da776d03",
+=======
+>>>>>>> ea333232132930ff526052d7391b1ebd8444ae7b
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
 "canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
 "canvaskit/profiling/canvaskit.js": "ae2949af4efc61d28a4a80fffa1db900",
 "canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
 "canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba",
 "manifest.json": "060679a5566e9b8f3f4c030447c23949",
+<<<<<<< HEAD
+"index.html": "fcef9de75d714115c3f6b775c7be627a",
+"/": "fcef9de75d714115c3f6b775c7be627a",
+=======
 "index.html": "b454aa6796ed705c493e7a5b304d4980",
 "/": "b454aa6796ed705c493e7a5b304d4980",
+>>>>>>> ea333232132930ff526052d7391b1ebd8444ae7b
 "flutter.js": "eb2682e33f25cd8f1fc59011497c35f8"
 };
 
