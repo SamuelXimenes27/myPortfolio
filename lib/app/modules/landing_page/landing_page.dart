@@ -6,7 +6,7 @@ import 'package:portifolio_web/app/modules/projects/fourth_layer.dart';
 
 import '../../shared/constants/colors_const.dart';
 import '../../shared/widgets/app_bar/appbar.dart';
-import '../../shared/widgets/app_bar/appbar_vertical.dart';
+import '../../shared/widgets/app_bar/sidebar.dart';
 import '../home/first_layer.dart';
 import '../../pages/footer.dart';
 import '../about/second_layer.dart';
@@ -35,9 +35,10 @@ class _LandingPageState extends State<LandingPage> {
 
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: kIsWeb ? _size * 0.05 : _size * 0.07,
-        child: _size.width > 600
+        preferredSize: kIsWeb ? _size * 0.09 : _size * 0.07,
+        child: _size.width > 740
             ? CustomAppBar(
+                opacity: 1,
                 onTapName: () {
                   controller!.position.ensureVisible(
                     firstAnchor.currentContext!.findRenderObject()!,
@@ -86,9 +87,12 @@ class _LandingPageState extends State<LandingPage> {
               )
             : AppBar(
                 backgroundColor: ColorsConst.primary1,
-                title: Text(
-                  'Samuel Ximenes',
-                  style: GoogleFonts.poppins(),
+                toolbarHeight: _size.height * 0.1,
+                title: Center(
+                  child: Text(
+                    'Samuel Ximenes',
+                    style: GoogleFonts.poppins(fontSize: 28),
+                  ),
                 ),
               ),
       ),
