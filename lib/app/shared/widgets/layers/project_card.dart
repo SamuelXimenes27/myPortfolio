@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portifolio_web/shared/constants/colors_const.dart';
-import 'package:portifolio_web/shared/widgets/buttons/elevated_button.dart';
+import 'package:portifolio_web/app/shared/constants/colors_const.dart';
+import 'package:portifolio_web/app/shared/widgets/buttons/elevated_button.dart';
 
 class CardProject extends StatefulWidget {
   final bool hasImagePath;

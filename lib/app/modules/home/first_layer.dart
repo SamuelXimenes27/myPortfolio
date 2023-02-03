@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../constants/colors_const.dart';
-import '../../../constants/string_const.dart';
-import '../../../widgets/buttons/elevated_button.dart';
+import '../../shared/constants/colors_const.dart';
+import '../../shared/constants/string_const.dart';
+import '../../shared/widgets/buttons/elevated_button.dart';
 
 class FirstLayer extends StatefulWidget {
   const FirstLayer({Key? key}) : super(key: key);

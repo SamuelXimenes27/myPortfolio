@@ -1,12 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:portifolio_web/shared/widgets/app_bar/appbar_vertical.dart';
+import 'package:portifolio_web/app/app_widget.dart';
+import 'package:portifolio_web/app/shared/widgets/app_bar/appbar_vertical.dart';
 
-import 'shared/web/page/landingpage/landing_page.dart';
-import '../shared/widgets/app_bar/appbar.dart';
+import 'app/modules/landing_page/landing_page.dart';
+import 'app/shared/widgets/app_bar/appbar.dart';
 
 void main() {
-  runApp(const MyPortfolio());
+  runApp(
+    const AppWidget(),
+  );
 }
 
 class MyPortfolio extends StatelessWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portifolio_web/shared/widgets/layers/project_card.dart';
+import 'package:portifolio_web/app/shared/widgets/layers/project_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../constants/string_const.dart';
-import '../../../widgets/layers/layer_title.dart';
+import '../../shared/constants/string_const.dart';
+import '../../shared/widgets/layers/layer_title.dart';
 
 class FourthLayer extends StatefulWidget {
   const FourthLayer({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:portifolio_web/shared/constants/colors_const.dart';
+import 'package:portifolio_web/app/shared/constants/colors_const.dart';
 
 class LinearPercentWithIcon extends StatefulWidget {
   final String pathImageIcon;

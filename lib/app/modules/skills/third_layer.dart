@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../widgets/percents/linear_percent_title.dart';
-import '../../../widgets/percents/percent_section_title.dart';
-import '../../../constants/string_const.dart';
-import '../../../widgets/layers/layer_title.dart';
+import '../../shared/widgets/percents/linear_percent_title.dart';
+import '../../shared/widgets/percents/percent_section_title.dart';
+import '../../shared/constants/string_const.dart';
+import '../../shared/widgets/layers/layer_title.dart';
 
 class ThirdLayer extends StatefulWidget {
   const ThirdLayer({Key? key}) : super(key: key);

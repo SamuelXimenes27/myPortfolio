@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:portifolio_web/responsive/responsive_layout.dart';
-import 'package:portifolio_web/shared/web/page/landingpage/fourth_layer.dart';
+import 'package:portifolio_web/app/responsive/responsive_layout.dart';
+import 'package:portifolio_web/app/modules/projects/fourth_layer.dart';
 
-import 'first_layer.dart';
-import 'footer.dart';
-import 'second_layer.dart';
-import 'third_layer.dart';
+import '../home/first_layer.dart';
+import '../../pages/footer.dart';
+import '../about/second_layer.dart';
+import '../skills/third_layer.dart';
 
 class LandingPage extends StatefulWidget {
   final ScrollController scrollController;
