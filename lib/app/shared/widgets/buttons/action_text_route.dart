@@ -19,8 +19,9 @@ class ActionText extends StatefulWidget {
 class _ActionTextState extends State<ActionText> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return InkWell(
       onTap: widget.onTap,
+      mouseCursor: MaterialStateMouseCursor.clickable,
       child: Center(
         child: Text(
           widget.text!,
