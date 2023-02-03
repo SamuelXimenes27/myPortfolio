@@ -6,6 +6,7 @@ class StringConst {
   static const String appBarAbout = 'Sobre';
   static const String appBarSkills = 'Habilidades';
   static const String appBarProjects = 'Projetos';
+  static const String sideBarTitle = 'Meu Portifolio';
 
   static const String firstLayerHi = 'Olá, eu sou';
   static const String firstLayerDev = 'Desenvolvedor Mobile';

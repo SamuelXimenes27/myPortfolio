@@ -28,6 +28,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   Widget build(BuildContext context) {
     final _size = MediaQuery.of(context).size;
     return AppBar(
+      automaticallyImplyLeading: false,
       backgroundColor: ColorsConst.primary1,
       title: Row(
         children: [

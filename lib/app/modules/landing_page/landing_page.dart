@@ -1,8 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio_web/app/responsive/responsive_layout.dart';
 import 'package:portifolio_web/app/modules/projects/fourth_layer.dart';
 
+import '../../shared/constants/colors_const.dart';
 import '../../shared/widgets/app_bar/appbar.dart';
 import '../../shared/widgets/app_bar/appbar_vertical.dart';
 import '../home/first_layer.dart';
@@ -25,6 +27,7 @@ class _LandingPageState extends State<LandingPage> {
   final secondAnchor = GlobalKey();
   final thirdAnchor = GlobalKey();
   final fourthAnchor = GlobalKey();
+  bool isOpen = true;
 
   @override
   Widget build(BuildContext context) {
@@ -32,56 +35,117 @@ class _LandingPageState extends State<LandingPage> {
 
     return Scaffold(
       appBar: PreferredSize(
-          preferredSize: kIsWeb ? _size * 0.05 : _size * 0.07,
-          child: _size.width > 600
-              ? CustomAppBar(
-                  onTapName: () {
-                    controller!.position.ensureVisible(
-                      firstAnchor.currentContext!.findRenderObject()!,
-                      alignment: 0.5,
-                      duration: const Duration(
-                        seconds: 2,
-                      ),
-                    );
-                  },
-                  onTapHome: () {
-                    controller!.position.ensureVisible(
-                      firstAnchor.currentContext!.findRenderObject()!,
-                      alignment: 0.5,
-                      duration: const Duration(
-                        seconds: 2,
-                      ),
-                    );
-                  },
-                  onTapAbout: () {
-                    controller!.position.ensureVisible(
-                      secondAnchor.currentContext!.findRenderObject()!,
-                      alignment: 0.5,
-                      duration: const Duration(
-                        seconds: 2,
-                      ),
-                    );
-                  },
-                  onTapSkills: () {
-                    controller!.position.ensureVisible(
-                      thirdAnchor.currentContext!.findRenderObject()!,
-                      alignment: 0.5,
-                      duration: const Duration(
-                        seconds: 2,
-                      ),
-                    );
-                  },
-                  onTapProjects: () {
-                    controller!.position.ensureVisible(
-                      fourthAnchor.currentContext!.findRenderObject()!,
-                      alignment: 0.0,
-                      duration: const Duration(
-                        seconds: 2,
-                      ),
-                    );
-                  },
-                )
-              : const CustomAppBarVertical()),
+        preferredSize: kIsWeb ? _size * 0.05 : _size * 0.07,
+        child: _size.width > 600
+            ? CustomAppBar(
+                onTapName: () {
+                  controller!.position.ensureVisible(
+                    firstAnchor.currentContext!.findRenderObject()!,
+                    alignment: 0.5,
+                    duration: const Duration(
+                      seconds: 2,
+                    ),
+                  );
+                },
+                onTapHome: () {
+                  controller!.position.ensureVisible(
+                    firstAnchor.currentContext!.findRenderObject()!,
+                    alignment: 0.5,
+                    duration: const Duration(
+                      seconds: 2,
+                    ),
+                  );
+                },
+                onTapAbout: () {
+                  controller!.position.ensureVisible(
+                    secondAnchor.currentContext!.findRenderObject()!,
+                    alignment: 0.5,
+                    duration: const Duration(
+                      seconds: 2,
+                    ),
+                  );
+                },
+                onTapSkills: () {
+                  controller!.position.ensureVisible(
+                    thirdAnchor.currentContext!.findRenderObject()!,
+                    alignment: 0.5,
+                    duration: const Duration(
+                      seconds: 2,
+                    ),
+                  );
+                },
+                onTapProjects: () {
+                  controller!.position.ensureVisible(
+                    fourthAnchor.currentContext!.findRenderObject()!,
+                    alignment: 0.0,
+                    duration: const Duration(
+                      seconds: 2,
+                    ),
+                  );
+                },
+              )
+            : AppBar(
+                backgroundColor: ColorsConst.primary1,
+                title: Text(
+                  'Samuel Ximenes',
+                  style: GoogleFonts.poppins(),
+                ),
+              ),
+      ),
+      drawer: _size.width < 600
+          ? CustomSideBar(
+              onTapHeader: () {
+                controller!.position.ensureVisible(
+                  firstAnchor.currentContext!.findRenderObject()!,
+                  alignment: 0.5,
+                  duration: const Duration(
+                    seconds: 2,
+                  ),
+                );
+                Navigator.pop(context);
+              },
+              onTapHome: () {
+                controller!.position.ensureVisible(
+                  firstAnchor.currentContext!.findRenderObject()!,
+                  alignment: 0.5,
+                  duration: const Duration(
+                    seconds: 2,
+                  ),
+                );
+                Navigator.pop(context);
+              },
+              onTapAbout: () {
+                controller!.position.ensureVisible(
+                  secondAnchor.currentContext!.findRenderObject()!,
+                  alignment: 0.5,
+                  duration: const Duration(
+                    seconds: 2,
+                  ),
+                );
+                Navigator.pop(context);
+              },
+              onTapSkills: () {
+                controller!.position.ensureVisible(
+                  thirdAnchor.currentContext!.findRenderObject()!,
+                  alignment: 0.5,
+                  duration: const Duration(
+                    seconds: 2,
+                  ),
+                );
+                Navigator.pop(context);
+              },
+              onTapProjects: () {
+                controller!.position.ensureVisible(
+                  fourthAnchor.currentContext!.findRenderObject()!,
+                  alignment: 0.0,
+                  duration: const Duration(
+                    seconds: 2,
+                  ),
+                );
+                Navigator.pop(context);
+              },
+            )
+          : Container(),
       body: SingleChildScrollView(
         controller: controller,
         child: ResponsiveLayout(
