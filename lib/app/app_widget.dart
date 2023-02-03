@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:portifolio_web/main.dart';
+import 'package:portifolio_web/app/modules/landing_page/landing_page.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'My Web Portfolio - Samuel Ximenes',
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      title: 'My Portfolio',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: const LandingPage(),
     );
   }
 }
