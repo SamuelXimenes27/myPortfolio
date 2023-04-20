@@ -91,8 +91,7 @@ class _SecondLayerState extends State<SecondLayer> {
                   SizedBox(
                     height: _size.height * 0.02,
                   ),
-                  Container(
-                    color: Colors.amber,
+                  SizedBox(
                     width: _size.width * 0.7,
                     height: _size.height * 1.4,
                     child: Column(
