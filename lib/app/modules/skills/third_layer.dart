@@ -24,7 +24,7 @@ class _ThirdLayerState extends State<ThirdLayer> {
           title: '${StringConst.thirdLayerSkills}\n',
           subTitle: '${StringConst.thirdLayerProfessionalSkills}\n',
         ),
-        _size.width > 600
+        _size.width > 891
             ? Row(
                 children: [
                   SizedBox(
@@ -32,7 +32,7 @@ class _ThirdLayerState extends State<ThirdLayer> {
                     height: _size.height * 0.7,
                     child: Center(
                       child: SizedBox(
-                        width: _size.width * 0.45,
+                        width: _size.width * 0.46,
                         height: _size.height * 0.5,
                         child: Scrollbar(
                           controller: _scrollController,
