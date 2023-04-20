@@ -173,7 +173,7 @@ class _ThirdLayerState extends State<ThirdLayer> {
                   ),
                   SizedBox(
                     width: _size.width * 1,
-                    height: _size.height * 2.2,
+                    height: _size.height * 2,
                     child: SizedBox(
                         width: _size.width * 1,
                         height: _size.height * 0.5,
