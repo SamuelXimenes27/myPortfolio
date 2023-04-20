@@ -1,4 +1,17 @@
 class StringConst {
+  static final birthday = DateTime(2000, 10, 27);
+  static final age = _calculateAge();
+
+  static int _calculateAge() {
+    final now = DateTime.now();
+    int age = now.year - birthday.year;
+    if (now.month < birthday.month ||
+        (now.month == birthday.month && now.day < birthday.day)) {
+      age--;
+    }
+    return age;
+  }
+
   static const String myName = 'Samuel Ximenes';
   static const String contact = 'Contato';
 
@@ -13,8 +26,8 @@ class StringConst {
 
   static const String secondLayerTitle = 'Sobre mim';
   static const String secondLayerSubTitle = 'Introdução';
-  static const String secondLayerTextAbout =
-      'Tenho 21 anos, sou estudante de Engenharia da Computação no IFCE, atualmente no 7ª semestre. \n\nMeu primeiro contato com desenvolvimento foi em meados de 2012 quando editava códigos de jogos vazados em fórum, desisti varias vezes ao longo da minha adolescência de aprender, quado no ensino médio ainda nesse vai e volta com esses códigos, decidi aprender de fato e cursar algo na área de programação. \n\nTenho experiência profissional na área trabalhando como bolsista remunerado em um projeto real no Lapisco, um dos melhores laboratórios de desenvolvimento do estado do Ceará.';
+  static String secondLayerTextAbout =
+      'Tenho $age anos, fui estudante de Engenharia da Computação no IFCE, até o 7ª semestre e me mudei para Portugal em Março de 2023. \n\nMeu primeiro contato com desenvolvimento foi em meados de 2012 quando editava códigos de jogos vazados em fórum, ao quebrar a cabeça durante muito anos sem saber de fato programar e o que de fato era desenvolver, decidi cursar algo na área e acabei passando para o IFCE. \n\nTenho experiência profissional na área trabalhando como desenvolvedor em 2 projetos no Lapisco, um dos melhores laboratórios de desenvolvimento do estado do Ceará.';
   static const String secondLayerResume = 'Currículo';
 
   static const String thirdLayerSkills = 'Habilidades';
