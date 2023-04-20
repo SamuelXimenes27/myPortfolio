@@ -17,35 +17,9 @@ class _FourthLayerState extends State<FourthLayer> {
     {
       'hasImagePath': true,
       'cardColorImage': Colors.red,
-      'title': 'My WebPortfolio (Este Projeto)',
-      'description':
-          'Projeto desenvolvido para usar como portfolio, falar um pouco sobre mim e mostrar meus projetos feitos.',
-      'pathImage': 'assets/images/webPortfolio.png',
-      'icons': Row(
-        children: const [
-          ImageIcon(
-            AssetImage('assets/icons/flutter.png'),
-            size: 44,
-          ),
-          SizedBox(
-            width: 15,
-          ),
-          ImageIcon(
-            AssetImage('assets/icons/github.png'),
-            size: 44,
-          ),
-        ],
-      ),
-      'link': 'https://github.com/SamuelXimenes27/myPortfolio',
-      'fit': BoxFit.fill
-    },
-    {
-      'hasImagePath': false,
-      'cardColorImage': Colors.red,
-      'title': 'PokedexApp',
-      'description':
-          'App feito para por em prática o consumo de API, fornecendo dados de todos os pokemons e suas características.',
-      'pathImage': '',
+      'title': 'Conversor de Moeda',
+      'description': 'App mobile de conversão de moedas feito com flutter.',
+      'pathImage': 'assets/images/currency.png',
       'icons': Row(
         children: const [
           ImageIcon(
@@ -61,8 +35,33 @@ class _FourthLayerState extends State<FourthLayer> {
           ),
         ],
       ),
-      'link': 'https://github.com/SamuelXimenes27/pokedexApp',
-      'fit': BoxFit.none
+      'link': 'https://github.com/SamuelXimenes27/conversor_moedas',
+      'fit': BoxFit.contain
+    },
+    {
+      'hasImagePath': true,
+      'cardColorImage': Colors.red,
+      'title': 'Simple Register',
+      'description':
+          'Projeto básico de cadastro feito em Flutter, feito somente para botar em prática alguma das coisas que aprendi com o framework.',
+      'pathImage': 'assets/images/listUser.png',
+      'icons': Row(
+        children: const [
+          ImageIcon(
+            AssetImage('assets/icons/flutter.png'),
+            size: 44,
+          ),
+          SizedBox(
+            width: 15,
+          ),
+          ImageIcon(
+            AssetImage('assets/icons/github.png'),
+            size: 44,
+          ),
+        ],
+      ),
+      'link': 'https://github.com/SamuelXimenes27/simpleRegister',
+      'fit': BoxFit.contain
     },
     {
       'hasImagePath': true,
@@ -135,8 +134,7 @@ class _FourthLayerState extends State<FourthLayer> {
                         onPressed: () {
                           launchUrl(Uri.parse(project['link']));
                         },
-                        fitImage:
-                            project['fit'] != null ? project['fit'] : null,
+                        fitImage: project['fit'],
                       );
                     }).toList(),
                   )
