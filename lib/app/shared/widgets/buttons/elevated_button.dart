@@ -23,21 +23,26 @@ class CustomElevatedButton extends StatefulWidget {
 class _CustomElevatedButtonState extends State<CustomElevatedButton> {
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: widget.onPressed,
-      child: Text(
-        widget.textButton!,
-        style: GoogleFonts.poppins(
-          fontSize: widget.fontSizeButton,
-          fontWeight: FontWeight.bold,
+    return LayoutBuilder(builder: (context, constraints) {
+      return ElevatedButton(
+        onPressed: widget.onPressed,
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            widget.textButton!,
+            style: GoogleFonts.poppins(
+              fontSize: widget.fontSizeButton,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
         ),
-      ),
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(widget.borderRadiusValue),
+        style: ElevatedButton.styleFrom(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(widget.borderRadiusValue),
+          ),
+          backgroundColor: ColorsConst.primary1,
         ),
-        primary: ColorsConst.primary1,
-      ),
-    );
+      );
+    });
   }
 }

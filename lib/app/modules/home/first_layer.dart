@@ -20,7 +20,7 @@ class _FirstLayerState extends State<FirstLayer> {
     return Row(
       children: [
         SizedBox(
-          width: _size.width > 600 ? _size.width * 0.3 : _size.width * 0.12,
+          width: _size.width > 740 ? _size.width * 0.3 : _size.width * 0.12,
           height: _size.height * 0.75,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -33,7 +33,7 @@ class _FirstLayerState extends State<FirstLayer> {
                 icon: const ImageIcon(
                   AssetImage('assets/icons/linkedin.png'),
                 ),
-                iconSize: _size.width > 600 ? 38 : 20,
+                iconSize: _size.width > 740 ? 38 : 20,
               ),
               const SizedBox(
                 height: 62,
@@ -46,7 +46,7 @@ class _FirstLayerState extends State<FirstLayer> {
                 icon: const ImageIcon(
                   AssetImage('assets/icons/github.png'),
                 ),
-                iconSize: _size.width > 600 ? 38 : 20,
+                iconSize: _size.width > 740 ? 38 : 20,
               ),
               const SizedBox(
                 height: 62,
@@ -58,7 +58,7 @@ class _FirstLayerState extends State<FirstLayer> {
                 icon: const ImageIcon(
                   AssetImage('assets/icons/gmail.png'),
                 ),
-                iconSize: _size.width > 600 ? 38 : 20,
+                iconSize: _size.width > 740 ? 38 : 20,
               ),
             ],
           ),
@@ -66,7 +66,7 @@ class _FirstLayerState extends State<FirstLayer> {
         SizedBox(
             width: _size.width * 0.7,
             height: _size.height * 0.8,
-            child: _size.width > 600
+            child: _size.width > 740
                 ? Row(
                     children: [
                       SizedBox(
@@ -194,10 +194,10 @@ class _FirstLayerState extends State<FirstLayer> {
                               Align(
                                 alignment: Alignment.centerLeft,
                                 child: SizedBox(
-                                  width: _size.width > 600
+                                  width: _size.width > 740
                                       ? _size.width / 10
                                       : _size.width / 2,
-                                  height: _size.width > 600
+                                  height: _size.width > 740
                                       ? _size.height / 14
                                       : _size.height / 18,
                                   child: CustomElevatedButton(
