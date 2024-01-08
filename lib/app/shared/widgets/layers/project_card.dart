@@ -3,6 +3,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:portifolio_web/app/shared/constants/colors_const.dart';
 import 'package:portifolio_web/app/shared/widgets/buttons/elevated_button.dart';
 
+import '../modal/info_modal.dart';
+
+// ignore: must_be_immutable
 class CardProject extends StatefulWidget {
   final bool hasImagePath;
   final String? pathCardImage;
@@ -37,30 +40,44 @@ class CardProject extends StatefulWidget {
 class _CardProjectState extends State<CardProject> {
   @override
   Widget build(BuildContext context) {
-    final _size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
 
     return SizedBox(
-      height: _size.height * 0.57,
-      width: _size.width * 0.4,
+      height: size.height * 0.57,
+      width: size.width * 0.4,
       child: Card(
         borderOnForeground: true,
         child: Column(
           children: [
             widget.hasImagePath
-                ? SizedBox(
-                    width: _size.width * 1,
-                    height: _size.height * 0.2,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10), // Image border
-                      child: Image(
-                        image: AssetImage(widget.pathCardImage!),
-                        fit: widget.fitImage,
+                ? InkWell(
+                    mouseCursor: MaterialStateMouseCursor.clickable,
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return InfoModalWidget(
+                              alertTitle: widget.titleProject,
+                              onPressed: widget.onPressed,
+                              pathCardImage: widget.pathCardImage,
+                            );
+                          });
+                    },
+                    child: SizedBox(
+                      width: size.width * 1,
+                      height: size.height * 0.2,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(10), // Image border
+                        child: Image(
+                          image: AssetImage(widget.pathCardImage!),
+                          fit: BoxFit.contain,
+                        ),
                       ),
                     ),
                   )
                 : SizedBox(
-                    width: _size.width * 1,
-                    height: _size.height * 0.2,
+                    width: size.width * 1,
+                    height: size.height * 0.2,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10), // Image border
                       child: Container(
@@ -80,11 +97,11 @@ class _CardProjectState extends State<CardProject> {
                     ),
                   ),
             SizedBox(
-              height: _size.height * 0.01,
+              height: size.height * 0.01,
             ),
             SizedBox(
-              width: _size.width * 1,
-              height: _size.height * 0.04,
+              width: size.width * 1,
+              height: size.height * 0.04,
               child: Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Align(
@@ -101,9 +118,8 @@ class _CardProjectState extends State<CardProject> {
               ),
             ),
             SizedBox(
-              width: _size.width * 1,
-              height:
-                  _size.width > 600 ? _size.height * 0.08 : _size.height * 0.2,
+              width: size.width * 1,
+              height: size.width > 600 ? size.height * 0.08 : size.height * 0.2,
               child: Padding(
                 padding: EdgeInsets.only(
                     left: 20, bottom: widget.bottomPaddingDescription),
@@ -119,11 +135,11 @@ class _CardProjectState extends State<CardProject> {
               ),
             ),
             SizedBox(
-              height: _size.height * 0.015,
+              height: size.height * 0.015,
             ),
             SizedBox(
-              width: _size.width * 1,
-              height: _size.height * 0.04,
+              width: size.width * 1,
+              height: size.height * 0.04,
               child: Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Align(
@@ -139,8 +155,8 @@ class _CardProjectState extends State<CardProject> {
               ),
             ),
             SizedBox(
-              width: _size.width * 1,
-              height: _size.height * 0.08,
+              width: size.width * 1,
+              height: size.height * 0.08,
               child: Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Align(
@@ -154,29 +170,22 @@ class _CardProjectState extends State<CardProject> {
               ),
             ),
             SizedBox(
-              height: _size.height * 0.03,
+              height: size.height * 0.03,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: SizedBox(
-                  width:
-                      _size.width > 600 ? _size.width * 0.09 : _size.width * 1,
-                  height: _size.width > 600
-                      ? _size.height * 0.04
-                      : _size.height * 0.06,
-                  child: CustomElevatedButton(
-                    borderRadiusValue: 10.0,
-                    textButton: 'Visualizar',
-                    onPressed: widget.onPressed,
-                  ),
+                child: CustomElevatedButton(
+                  borderRadiusValue: 10.0,
+                  textButton: 'Visualizar',
+                  onPressed: widget.onPressed,
                 ),
               ),
             ),
-            _size.width < 600
+            size.width < 600
                 ? SizedBox(
-                    height: _size.height * 0.015,
+                    height: size.height * 0.015,
                   )
                 : Container()
           ],
