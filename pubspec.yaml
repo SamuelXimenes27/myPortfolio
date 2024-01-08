@@ -16,17 +16,17 @@ dependencies:
   cupertino_icons: ^1.0.2
   dual_screen: ^1.0.3
   adaptive_breakpoints: ^0.1.4
-  package_info_plus: ^1.4.3+1
+  package_info_plus: ^5.0.1
   url_launcher: ^6.1.5
   shared_preferences: ^2.0.15
-  google_fonts: ^3.0.1
+  google_fonts: ^6.1.0
   percent_indicator: ^4.2.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^1.0.0
+  flutter_lints: ^3.0.1
 
 flutter:
 

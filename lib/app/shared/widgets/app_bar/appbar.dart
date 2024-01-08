@@ -48,13 +48,16 @@ class _CustomAppBarState extends State<CustomAppBar> {
             children: [
               InkWell(
                 onTap: widget.onTapHome,
-                child: Text(
-                  'Samuel Ximenes',
-                  style: GoogleFonts.poppins(
-                    color: ColorsConst.white100,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 3,
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 5),
+                  child: Text(
+                    'Samuel Ximenes',
+                    style: GoogleFonts.poppins(
+                      color: ColorsConst.white100,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w400,
+                      letterSpacing: 3,
+                    ),
                   ),
                 ),
               ),

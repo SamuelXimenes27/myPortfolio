@@ -26,21 +26,22 @@ class _CustomElevatedButtonState extends State<CustomElevatedButton> {
     return LayoutBuilder(builder: (context, constraints) {
       return ElevatedButton(
         onPressed: widget.onPressed,
-        child: FittedBox(
-          fit: BoxFit.scaleDown,
-          child: Text(
-            widget.textButton!,
-            style: GoogleFonts.poppins(
-              fontSize: widget.fontSizeButton,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
         style: ElevatedButton.styleFrom(
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(widget.borderRadiusValue),
           ),
           backgroundColor: ColorsConst.primary1,
+        ),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            widget.textButton!,
+            style: GoogleFonts.poppins(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
         ),
       );
     });

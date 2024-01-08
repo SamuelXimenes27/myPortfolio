@@ -48,7 +48,7 @@ class _LinearPercentWithIconState extends State<LinearPercentWithIcon> {
                 ),
               ),
               Expanded(
-                flex: 1,
+                flex: 2,
                 child: Text(widget.percentString),
               ),
             ],

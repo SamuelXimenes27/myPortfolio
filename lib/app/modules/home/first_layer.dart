@@ -116,16 +116,12 @@ class _FirstLayerState extends State<FirstLayer> {
                               ),
                               Align(
                                 alignment: Alignment.centerLeft,
-                                child: SizedBox(
-                                  width: _size.width / 10,
-                                  height: _size.height / 14,
-                                  child: CustomElevatedButton(
-                                    onPressed: () {
-                                      launchUrl(Uri.parse(
-                                          'mailto:samuelximenes27@gmail.com'));
-                                    },
-                                    textButton: StringConst.contact,
-                                  ),
+                                child: CustomElevatedButton(
+                                  onPressed: () {
+                                    launchUrl(Uri.parse(
+                                        'mailto:samuelximenes27@gmail.com'));
+                                  },
+                                  textButton: StringConst.contact,
                                 ),
                               ),
                             ],
