@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,26 +23,61 @@ class LandingPage extends StatefulWidget {
   State<LandingPage> createState() => _LandingPageState();
 }
 
-class _LandingPageState extends State<LandingPage> {
-  ScrollController? controller = ScrollController();
+class _LandingPageState extends State<LandingPage>
+    with SingleTickerProviderStateMixin {
+  ScrollController? scrollController = ScrollController();
   final firstAnchor = GlobalKey();
   final secondAnchor = GlobalKey();
   final thirdAnchor = GlobalKey();
   final fourthAnchor = GlobalKey();
   bool isOpen = true;
+  bool isFirstTime = true;
+
+  late AnimationController animationController;
+  late CurvedAnimation _curve;
+
+  double scrollPosition = 0.0;
+
+  @override
+  initState() {
+    super.initState();
+    scrollController!.addListener(() {
+      setState(() {
+        scrollPosition = scrollController!.position.pixels;
+      });
+    });
+    animationController =
+        AnimationController(duration: const Duration(seconds: 2), vsync: this);
+    _curve = CurvedAnimation(parent: animationController, curve: Curves.easeIn);
+    animationController.forward();
+  }
+
+  double getOpacityValue(double scrollPosition, double targetPosition) {
+    const double opacityStart = 0.0;
+    const double opacityEnd = 1.0;
+
+    double opacity = 0.0;
+
+    if (scrollPosition >= targetPosition) {
+      opacity = (scrollPosition - targetPosition) / 300.0;
+      opacity = opacity.clamp(opacityStart, opacityEnd);
+    }
+
+    return opacity;
+  }
 
   @override
   Widget build(BuildContext context) {
-    final _size = MediaQuery.of(context).size;
+    final size = MediaQuery.of(context).size;
 
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: kIsWeb ? _size * 0.09 : _size * 0.07,
-        child: _size.width > 740
+        preferredSize: kIsWeb ? size * 0.09 : size * 0.07,
+        child: size.width > 740
             ? CustomAppBar(
                 opacity: 1,
                 onTapName: () {
-                  controller!.position.ensureVisible(
+                  scrollController!.position.ensureVisible(
                     firstAnchor.currentContext!.findRenderObject()!,
                     alignment: 0.5,
                     duration: const Duration(
@@ -49,7 +86,7 @@ class _LandingPageState extends State<LandingPage> {
                   );
                 },
                 onTapHome: () {
-                  controller!.position.ensureVisible(
+                  scrollController!.position.ensureVisible(
                     firstAnchor.currentContext!.findRenderObject()!,
                     alignment: 0.5,
                     duration: const Duration(
@@ -58,7 +95,7 @@ class _LandingPageState extends State<LandingPage> {
                   );
                 },
                 onTapAbout: () {
-                  controller!.position.ensureVisible(
+                  scrollController!.position.ensureVisible(
                     secondAnchor.currentContext!.findRenderObject()!,
                     alignment: 0.5,
                     duration: const Duration(
@@ -67,7 +104,7 @@ class _LandingPageState extends State<LandingPage> {
                   );
                 },
                 onTapSkills: () {
-                  controller!.position.ensureVisible(
+                  scrollController!.position.ensureVisible(
                     thirdAnchor.currentContext!.findRenderObject()!,
                     alignment: 0.5,
                     duration: const Duration(
@@ -76,7 +113,7 @@ class _LandingPageState extends State<LandingPage> {
                   );
                 },
                 onTapProjects: () {
-                  controller!.position.ensureVisible(
+                  scrollController!.position.ensureVisible(
                     fourthAnchor.currentContext!.findRenderObject()!,
                     alignment: 0.0,
                     duration: const Duration(
@@ -87,7 +124,7 @@ class _LandingPageState extends State<LandingPage> {
               )
             : AppBar(
                 backgroundColor: ColorsConst.primary1,
-                toolbarHeight: _size.height * 0.1,
+                toolbarHeight: size.height * 0.1,
                 title: Center(
                   child: Text(
                     'Samuel Ximenes',
@@ -96,10 +133,10 @@ class _LandingPageState extends State<LandingPage> {
                 ),
               ),
       ),
-      drawer: _size.width < 600
+      drawer: size.width < 600
           ? CustomSideBar(
               onTapHeader: () {
-                controller!.position.ensureVisible(
+                scrollController!.position.ensureVisible(
                   firstAnchor.currentContext!.findRenderObject()!,
                   alignment: 0.5,
                   duration: const Duration(
@@ -109,7 +146,7 @@ class _LandingPageState extends State<LandingPage> {
                 Navigator.pop(context);
               },
               onTapHome: () {
-                controller!.position.ensureVisible(
+                scrollController!.position.ensureVisible(
                   firstAnchor.currentContext!.findRenderObject()!,
                   alignment: 0.5,
                   duration: const Duration(
@@ -119,7 +156,7 @@ class _LandingPageState extends State<LandingPage> {
                 Navigator.pop(context);
               },
               onTapAbout: () {
-                controller!.position.ensureVisible(
+                scrollController!.position.ensureVisible(
                   secondAnchor.currentContext!.findRenderObject()!,
                   alignment: 0.5,
                   duration: const Duration(
@@ -129,7 +166,7 @@ class _LandingPageState extends State<LandingPage> {
                 Navigator.pop(context);
               },
               onTapSkills: () {
-                controller!.position.ensureVisible(
+                scrollController!.position.ensureVisible(
                   thirdAnchor.currentContext!.findRenderObject()!,
                   alignment: 0.5,
                   duration: const Duration(
@@ -139,7 +176,7 @@ class _LandingPageState extends State<LandingPage> {
                 Navigator.pop(context);
               },
               onTapProjects: () {
-                controller!.position.ensureVisible(
+                scrollController!.position.ensureVisible(
                   fourthAnchor.currentContext!.findRenderObject()!,
                   alignment: 0.0,
                   duration: const Duration(
@@ -151,10 +188,10 @@ class _LandingPageState extends State<LandingPage> {
             )
           : Container(),
       body: SingleChildScrollView(
-        controller: controller,
+        controller: scrollController,
         child: ResponsiveLayout(
-          mobileBody: Column(
-            children: const [
+          mobileBody: const Column(
+            children: [
               FirstLayer(),
               SecondLayer(),
               ThirdLayer(),
@@ -163,25 +200,40 @@ class _LandingPageState extends State<LandingPage> {
             ],
           ),
           webBody: Scrollbar(
-            controller: controller,
+            controller: scrollController,
             thumbVisibility: true,
             child: Column(
               children: [
-                Container(
-                  key: firstAnchor,
-                  child: const FirstLayer(),
+                FadeTransition(
+                  opacity: _curve,
+                  child: Container(
+                    key: firstAnchor,
+                    child: const FirstLayer(),
+                  ),
                 ),
-                Container(
-                  key: secondAnchor,
-                  child: const SecondLayer(),
+                AnimatedOpacity(
+                  opacity: getOpacityValue(scrollPosition, 100.0),
+                  duration: const Duration(seconds: 1),
+                  child: Container(
+                    key: secondAnchor,
+                    child: const SecondLayer(),
+                  ),
                 ),
-                Container(
-                  key: thirdAnchor,
-                  child: const ThirdLayer(),
+                AnimatedOpacity(
+                  opacity: getOpacityValue(scrollPosition, 700.0),
+                  duration: const Duration(seconds: 1),
+                  child: Container(
+                    key: thirdAnchor,
+                    child: const ThirdLayer(),
+                  ),
                 ),
-                Container(
-                  key: fourthAnchor,
-                  child: const FourthLayer(),
+                AnimatedOpacity(
+                  opacity: getOpacityValue(scrollPosition, 1700.0),
+                  duration: const Duration(seconds: 1),
+                  child: Container(
+                    key: fourthAnchor,
+                    child: const FourthLayer(),
+                  ),
                 ),
                 const FooterApp()
               ],
@@ -190,5 +242,11 @@ class _LandingPageState extends State<LandingPage> {
         ),
       ),
     );
+  }
+
+  @override
+  dispose() {
+    animationController.dispose();
+    super.dispose();
   }
 }
