@@ -128,7 +128,7 @@ class _FourthLayerState extends State<FourthLayer> {
         ),
         SizedBox(
           width: _size.width * 1,
-          height: _size.width > 950 ? _size.height * 1.3 : _size.height * 2.5,
+          height: _size.width > 950 ? _size.height * 1.3 : _size.height * 2.9,
           child: Center(
             child: _size.width > 950
                 ? Wrap(

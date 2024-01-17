@@ -89,7 +89,7 @@ class _SecondLayerState extends State<SecondLayer> {
                   ),
                   SizedBox(
                     width: _size.width * 0.7,
-                    height: _size.height * 1.4,
+                    height: _size.height * 1.75,
                     child: Column(
                       children: [
                         Align(

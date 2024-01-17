@@ -27,7 +27,7 @@ class StringConst {
   static const String secondLayerTitle = 'Sobre mim';
   static const String secondLayerSubTitle = 'Introdução';
   static String secondLayerTextAbout =
-      'Tenho $age anos, fui estudante de Engenharia da Computação no IFCE, até o 7ª semestre e me mudei para Portugal em Março de 2023. \n\nMeu primeiro contato com desenvolvimento foi em meados de 2012 quando editava códigos de jogos vazados em fórum, ao quebrar a cabeça durante muito anos sem saber de fato programar e o que de fato era desenvolver, decidi cursar algo na área e acabei passando para o IFCE. \n\nTenho experiência profissional na área trabalhando como desenvolvedor em 2 projetos no Lapisco, um dos melhores laboratórios de desenvolvimento do estado do Ceará.';
+      'Tenho $age anos, fui estudante de Engenharia da Computação no IFCE, até o 7ª semestre e me mudei para Portugal em Março de 2023. \n\nMeu primeiro contato com desenvolvimento foi em meados de 2012 quando editava códigos de jogos vazados em fórum, ao quebrar a cabeça durante muito anos sem saber de fato programar e o que de fato era desenvolver, decidi cursar algo na área e acabei passando para o IFCE. \n\nTenho 1 ano de experiência profissional na área trabalhando como desenvolvedor no Lapisco, um dos melhores laboratórios de desenvolvimento do estado do Ceará.';
   static const String secondLayerResume = 'Currículo';
 
   static const String thirdLayerSkills = 'Habilidades';

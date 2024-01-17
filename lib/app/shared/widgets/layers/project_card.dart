@@ -44,8 +44,9 @@ class _CardProjectState extends State<CardProject> {
     final size = MediaQuery.of(context).size;
 
     return SizedBox(
-      height: size.height * 0.57,
-      width: size.width * 0.4,
+      width: MediaQuery.of(context).size.width < 600
+          ? double.infinity
+          : MediaQuery.of(context).size.width * 0.3,
       child: Card(
         borderOnForeground: true,
         child: Column(

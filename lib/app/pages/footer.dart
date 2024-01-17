@@ -16,6 +16,7 @@ class FooterApp extends StatelessWidget {
       height: _size.height * 0.07,
       child: Center(
         child: RichText(
+          textAlign: TextAlign.center,
           text: TextSpan(
             text: '',
             children: [
