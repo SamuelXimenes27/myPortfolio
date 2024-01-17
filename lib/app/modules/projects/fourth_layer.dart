@@ -19,7 +19,9 @@ class _FourthLayerState extends State<FourthLayer> {
       'cardColorImage': Colors.red,
       'title': 'Conversor de Moeda',
       'description': 'App mobile de conversão de moedas feito com flutter.',
-      'pathImage': 'assets/images/currency.png',
+      'pathImage': [
+        'assets/images/currency.png',
+      ],
       'icons': const Row(
         children: [
           ImageIcon(
@@ -44,7 +46,10 @@ class _FourthLayerState extends State<FourthLayer> {
       'title': 'Simple Register',
       'description':
           'Projeto básico de cadastro feito em Flutter, feito somente para botar em prática alguma das coisas que aprendi com o framework.',
-      'pathImage': 'assets/images/listUser.png',
+      'pathImage': [
+        'assets/images/listUser.png',
+        'assets/images/listUser2.png'
+      ],
       'icons': const Row(
         children: [
           ImageIcon(
@@ -69,7 +74,9 @@ class _FourthLayerState extends State<FourthLayer> {
       'title': 'Lapisco',
       'description':
           'App simples no qual consome a RandomUser.API e mostrando os dados tratados fornecidos por ela. Feito para o processo seletivo do Lapisco, laboratório no qual estou atualmente.',
-      'pathImage': 'assets/images/lapiscoApp.png',
+      'pathImage': [
+        'assets/images/lapiscoApp.png',
+      ],
       'icons': const Row(
         children: [
           ImageIcon(
@@ -91,7 +98,11 @@ class _FourthLayerState extends State<FourthLayer> {
       'title': 'ExpenseApp',
       'description':
           'App feito para controle de despesas semanais com simples gráfico feito em puro Flutter.',
-      'pathImage': 'assets/images/expenseApp.png',
+      'pathImage': [
+        'assets/images/expense.png',
+        'assets/images/expense2.png',
+        'assets/images/expense3.png',
+      ],
       'icons': const Row(
         children: [
           ImageIcon(

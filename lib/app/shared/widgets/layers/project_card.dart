@@ -8,7 +8,7 @@ import '../modal/info_modal.dart';
 // ignore: must_be_immutable
 class CardProject extends StatefulWidget {
   final bool hasImagePath;
-  final String? pathCardImage;
+  final List<String>? pathCardImage;
   final String? cardTitleImage;
   final Color? cardColorImage;
   final String? titleProject;
@@ -17,8 +17,9 @@ class CardProject extends StatefulWidget {
   final Alignment alignmentDescription;
   final double bottomPaddingDescription;
   final dynamic Function()? onPressed;
-  var iconsTecnologys;
-  CardProject({
+  final dynamic iconsTecnologys;
+
+  const CardProject({
     Key? key,
     this.hasImagePath = true,
     this.titleProject,
@@ -57,9 +58,9 @@ class _CardProjectState extends State<CardProject> {
                           context: context,
                           builder: (BuildContext context) {
                             return InfoModalWidget(
-                              alertTitle: widget.titleProject,
-                              onPressed: widget.onPressed,
-                              pathCardImage: widget.pathCardImage,
+                              alertTitle: widget.titleProject!,
+                              onPressed: widget.onPressed!,
+                              pathCardImage: widget.pathCardImage!,
                             );
                           });
                     },
@@ -69,7 +70,7 @@ class _CardProjectState extends State<CardProject> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(10), // Image border
                         child: Image(
-                          image: AssetImage(widget.pathCardImage!),
+                          image: AssetImage(widget.pathCardImage![0]),
                           fit: BoxFit.contain,
                         ),
                       ),
